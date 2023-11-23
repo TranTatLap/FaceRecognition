@@ -22,6 +22,7 @@ namespace FaceRecognize
         private Rectangle originalRectangel;
         private Rectangle originalFormSize;
         private Form2 f2;
+        String basePath = @"..\..\";
         IFirebaseClient client;
 
         IFirebaseConfig config = new FirebaseConfig
@@ -66,7 +67,9 @@ namespace FaceRecognize
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
-            picRes.Image = Image.FromFile("D:\\Programs\\NCKH\\FaceRecognize\\FaceRecognize\\Resources\\0.png");
+
+            //picRes.Image = Image.FromFile("D:\\Programs\\NCKH\\FaceRecognize\\FaceRecognize\\Resources\\0.png");
+            picRes.Image = Image.FromFile(basePath + @"Resources\0.png");
             btnStart.PerformClick();
             btnDetail.Visible = false;
 
@@ -79,7 +82,7 @@ namespace FaceRecognize
 
         private void btnTake_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.InitialDirectory = "D:\\Programs\\NCKH\\Images";
+            saveFileDialog1.InitialDirectory =@"D:\Document\GitHub\FaceRecognition\Winform\Images";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 picCam.Image.Save(saveFileDialog1.FileName);

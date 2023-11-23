@@ -43,10 +43,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnReceive = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbImage = new System.Windows.Forms.PictureBox();
             this.dtpDoB = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +65,7 @@
             this.tbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbID.Location = new System.Drawing.Point(157, 205);
             this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(199, 24);
+            this.tbID.Size = new System.Drawing.Size(397, 24);
             this.tbID.TabIndex = 1;
             // 
             // tbName
@@ -193,15 +193,16 @@
             this.btnReceive.UseVisualStyleBackColor = false;
             this.btnReceive.Click += new System.EventHandler(this.btnReceive_Click);
             // 
-            // pictureBox1
+            // pbImage
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(157, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(288, 187);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.pbImage.Image = ((System.Drawing.Image)(resources.GetObject("pbImage.Image")));
+            this.pbImage.Location = new System.Drawing.Point(157, 12);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(288, 187);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImage.TabIndex = 17;
+            this.pbImage.TabStop = false;
+            this.pbImage.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // dtpDoB
             // 
@@ -230,7 +231,7 @@
             this.ClientSize = new System.Drawing.Size(596, 483);
             this.Controls.Add(this.dtpDoB);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbImage);
             this.Controls.Add(this.btnReceive);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbPres);
@@ -250,7 +251,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patient information";
             this.Load += new System.EventHandler(this.Form3_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,7 +273,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnReceive;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.DateTimePicker dtpDoB;
         private System.Windows.Forms.Label label7;
     }
