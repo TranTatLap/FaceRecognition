@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FaceRecognize.Properties;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
@@ -18,19 +19,24 @@ namespace FaceRecognize
 {
     public partial class Form3 : Form
     {
+        String basePath = @"..\..\";
         IFirebaseClient client;
-
+        private String Id;
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "G4GUZnW4cd9AkPP7NOzYGy55NoPWtzxd7lI7nygU",
             BasePath = "https://facerecognition-6c037-default-rtdb.asia-southeast1.firebasedatabase.app/"
 
         };
-        public Form3()
+        public Form3(String id = "")
         {
             InitializeComponent();
+            Id = id;
+            if (Id != "")
+            {
+                tbID.Text = Id;
+            }
         }
-
         private async void btnAdd_Click(object sender, EventArgs e)
         {
             var data = new Patient
@@ -65,8 +71,21 @@ namespace FaceRecognize
             MessageBox.Show("Patient added! \n Id: " + result.Id);
         }
 
+        private void clear_All_textBox()
+        {
+            tbID.Clear();
+            tbName.Clear();
+            tbDisease.Clear();
+            tbPres.Clear();
+        }
+
         private async void btnReceive_Click(object sender, EventArgs e)
         {
+            if(tbID.Text == "")
+            {
+                MessageBox.Show("ID field cannot be blank");
+                return;
+            }
             FirebaseResponse response = await client.GetAsync("Patients/" + tbID.Text);
             Patient obj = response.ResultAs<Patient>();
             
@@ -82,14 +101,15 @@ namespace FaceRecognize
             }
             else
             {
-                pbImage.Image = Image.FromFile("D:\\Document\\GitHub\\FaceRecognition\\Winform\\FaceRecognize\\Resources\\pngegg.png");
+                clear_All_textBox();
+                pbImage.Image = Image.FromFile(basePath + @"Resources\pngegg.png");
                 MessageBox.Show("No patient was found");
             }
 
             FirebaseResponse response2 = await client.GetAsync("Images/" + tbID.Text);
             Image_class obj2 = response2.ResultAs<Image_class>();
 
-            if (obj2!= null)
+            if (obj2!= null && obj2.Img != null)
             {
                 byte[] b = Convert.FromBase64String(obj2.Img);
 
@@ -104,7 +124,7 @@ namespace FaceRecognize
             }
             else
             {
-                pbImage.Image = Image.FromFile("D:\\Document\\GitHub\\FaceRecognition\\Winform\\FaceRecognize\\Resources\\pngegg.png");
+                pbImage.Image = Image.FromFile(basePath + @"Resources\pngegg.png");
                 MessageBox.Show("No image was found");
             }
 

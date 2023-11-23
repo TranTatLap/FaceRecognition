@@ -21,7 +21,7 @@ namespace FaceRecognize
         private VideoCaptureDevice cam;
         private Rectangle originalRectangel;
         private Rectangle originalFormSize;
-        private Form2 f2;
+        private Form3 f3;
         String basePath = @"..\..\";
         IFirebaseClient client;
 
@@ -68,14 +68,13 @@ namespace FaceRecognize
         private void btnReset_Click(object sender, EventArgs e)
         {
 
-            //picRes.Image = Image.FromFile("D:\\Programs\\NCKH\\FaceRecognize\\FaceRecognize\\Resources\\0.png");
             picRes.Image = Image.FromFile(basePath + @"Resources\0.png");
             btnStart.PerformClick();
             btnDetail.Visible = false;
 
-            if (f2 != null)
+            if (f3 != null)
             {
-                f2.Hide();
+                f3.Hide();
             }
 
         }
@@ -95,27 +94,8 @@ namespace FaceRecognize
             Stop_cam();
         }
 
-        //private void resizeControl(Rectangle r, PictureBox c)
-        //{
-        //    float xRatio = (float)(this.Width) / (float)(originalFormSize.Width);
-        //    float yRatio = (float)(this.Height) / (float)(originalFormSize.Height);
-
-        //    int newX = (int)(r.Location.X * xRatio);
-        //    int newY = (int)(r.Location.Y * yRatio);
-
-        //    int newWidth = (int)(r.Width * xRatio);
-        //    int newHeight = (int)(r.Height * yRatio);
-
-        //    c.Location = new Point(newX, newY);
-        //    c.Size = new Size(newWidth, newHeight);
-        //}
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            //picCam.Location = new Point(26, 84);
-            //picCam.Size = new Size(296, 238);
-            //originalFormSize = new Rectangle(this.Location.X, this.Location.Y, this.Size.Width, this.Size.Height);
-            //originalRectangel = new Rectangle(picCam.Location.X, picCam.Location.Y, picCam.Width, picCam.Height);
 
             client = new FireSharp.FirebaseClient(config);
             if(client == null)
@@ -132,7 +112,7 @@ namespace FaceRecognize
 
         private void picCam_Click(object sender, EventArgs e)
         {
-            picRes.Image = Image.FromFile("D:\\Programs\\NCKH\\FaceRecognize\\FaceRecognize\\Resources\\1.png");
+            picRes.Image = Image.FromFile(basePath + @"Resources\1.png");
             picCam.SizeMode = PictureBoxSizeMode.StretchImage;
 
             if (cam != null && cam.IsRunning)
@@ -141,11 +121,10 @@ namespace FaceRecognize
                 cam.WaitForStop();
             }
 
-            picCam.Image = Image.FromFile("D:\\Programs\\NCKH\\FaceRecognize\\FaceRecognize\\Resources\\cam_off.jpg");
+            picCam.Image = Image.FromFile(basePath + @"Resources\cam_off.jpg");
 
             btnDetail.Visible = true;
 
-            //picRes.Image = Image.FromFile("D:\\Programs\\NCKH\\FaceRecognize\\FaceRecognize\\Resources\\0.png");
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -156,8 +135,9 @@ namespace FaceRecognize
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            f2 = new Form2();
-            f2.Show();
+            f3 = new Form3("123455");
+            f3.Show();
+
         }
     }
 }
