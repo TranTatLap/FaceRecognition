@@ -39,13 +39,14 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.tbDisease = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbPres = new System.Windows.Forms.TextBox();
+            this.tbPhone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnReceive = new System.Windows.Forms.Button();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.dtpDoB = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnPres = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,24 +147,24 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Disease:";
             // 
-            // tbPres
+            // tbPhone
             // 
-            this.tbPres.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPres.Location = new System.Drawing.Point(157, 295);
-            this.tbPres.Name = "tbPres";
-            this.tbPres.Size = new System.Drawing.Size(397, 24);
-            this.tbPres.TabIndex = 13;
+            this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPhone.Location = new System.Drawing.Point(157, 295);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(397, 24);
+            this.tbPhone.TabIndex = 13;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.label6.Location = new System.Drawing.Point(37, 297);
+            this.label6.Location = new System.Drawing.Point(17, 297);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 22);
+            this.label6.Size = new System.Drawing.Size(134, 22);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Prescription:";
+            this.label6.Text = "Phone number:";
             // 
             // btnAdd
             // 
@@ -224,17 +225,28 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Date of birth:";
             // 
+            // btnPres
+            // 
+            this.btnPres.Location = new System.Drawing.Point(560, 269);
+            this.btnPres.Name = "btnPres";
+            this.btnPres.Size = new System.Drawing.Size(24, 23);
+            this.btnPres.TabIndex = 20;
+            this.btnPres.Text = "...";
+            this.btnPres.UseVisualStyleBackColor = true;
+            this.btnPres.Click += new System.EventHandler(this.btnPres_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 483);
+            this.Controls.Add(this.btnPres);
             this.Controls.Add(this.dtpDoB);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.btnReceive);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.tbPres);
+            this.Controls.Add(this.tbPhone);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbDisease);
             this.Controls.Add(this.label5);
@@ -247,6 +259,7 @@
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patient information";
@@ -269,12 +282,13 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.TextBox tbDisease;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbPres;
+        private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnReceive;
         private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.DateTimePicker dtpDoB;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnPres;
     }
 }

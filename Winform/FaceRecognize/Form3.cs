@@ -39,12 +39,17 @@ namespace FaceRecognize
         }
         private async void btnAdd_Click(object sender, EventArgs e)
         {
+            if (tbID.Text == "")
+            {
+                MessageBox.Show("ID field cannot be blank");
+                return;
+            }
             var data = new Patient
             {
                 Id = tbID.Text,
                 Name = tbName.Text,
                 Diasease = tbDisease.Text,
-                Pres = tbPres.Text,
+                Phone = tbPhone.Text,
                 dob = dtpDoB.Text,
                 start_date = dtpStart.Text,
                 end_date = dtpEnd.Text
@@ -76,25 +81,48 @@ namespace FaceRecognize
             tbID.Clear();
             tbName.Clear();
             tbDisease.Clear();
-            tbPres.Clear();
+            tbPhone.Clear();
         }
 
-        private async void btnReceive_Click(object sender, EventArgs e)
+
+        private void btnReceive_Click(object sender, EventArgs e)
         {
             if(tbID.Text == "")
             {
                 MessageBox.Show("ID field cannot be blank");
                 return;
             }
+            receiveInfo();
+
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            client = new FireSharp.FirebaseClient(config);
+            if (client == null)
+            {
+                MessageBox.Show("Connection to database failed");
+            }
+            
+            if(Id != "")
+            {
+                receiveInfo();
+                
+            }
+
+        }
+
+        private async void receiveInfo()
+        {
             FirebaseResponse response = await client.GetAsync("Patients/" + tbID.Text);
             Patient obj = response.ResultAs<Patient>();
-            
+
             if (obj != null)
             {
                 tbID.Text = obj.Id;
                 tbName.Text = obj.Name;
                 tbDisease.Text = obj.Diasease;
-                tbPres.Text = obj.Pres;
+                tbPhone.Text = obj.Phone;
                 dtpDoB.Value = DateTime.ParseExact(obj.dob, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 dtpStart.Value = DateTime.ParseExact(obj.start_date, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 dtpEnd.Value = DateTime.ParseExact(obj.end_date, "MM/dd/yyyy", CultureInfo.InvariantCulture);
@@ -109,7 +137,7 @@ namespace FaceRecognize
             FirebaseResponse response2 = await client.GetAsync("Images/" + tbID.Text);
             Image_class obj2 = response2.ResultAs<Image_class>();
 
-            if (obj2!= null && obj2.Img != null)
+            if (obj2 != null && obj2.Img != null)
             {
                 byte[] b = Convert.FromBase64String(obj2.Img);
 
@@ -127,18 +155,6 @@ namespace FaceRecognize
                 pbImage.Image = Image.FromFile(basePath + @"Resources\pngegg.png");
                 MessageBox.Show("No image was found");
             }
-
-
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-            client = new FireSharp.FirebaseClient(config);
-            if (client == null)
-            {
-                MessageBox.Show("Connection to database failed");
-            }
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -153,5 +169,14 @@ namespace FaceRecognize
                 pbImage.Image = img;
             }
         }
+
+        private void btnPres_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2(tbID.Text.Trim());
+            f2.Show();
+
+        }
+
+
     }
 }

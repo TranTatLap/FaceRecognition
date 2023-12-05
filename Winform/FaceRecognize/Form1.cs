@@ -121,7 +121,7 @@ namespace FaceRecognize
                 cam.WaitForStop();
             }
 
-            picCam.Image = Image.FromFile(basePath + @"Resources\cam_off.jpg");
+            picCam.Image = Image.FromFile(basePath + @"Resources\cam_off.png");
 
             btnDetail.Visible = true;
 
