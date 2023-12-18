@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.gridPres = new System.Windows.Forms.DataGridView();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDose = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clbSession = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,11 +48,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnReceive = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDose = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridPres)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +67,46 @@
             this.gridPres.RowHeadersWidth = 51;
             this.gridPres.Size = new System.Drawing.Size(662, 489);
             this.gridPres.TabIndex = 0;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "name";
+            this.colName.HeaderText = "Medicine name";
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
+            this.colName.Width = 180;
+            // 
+            // colSession
+            // 
+            this.colSession.DataPropertyName = "session";
+            this.colSession.HeaderText = "Session";
+            this.colSession.MinimumWidth = 6;
+            this.colSession.Name = "colSession";
+            this.colSession.Width = 150;
+            // 
+            // colDose
+            // 
+            this.colDose.DataPropertyName = "dose";
+            this.colDose.HeaderText = "Dose";
+            this.colDose.MinimumWidth = 6;
+            this.colDose.Name = "colDose";
+            this.colDose.Width = 99;
+            // 
+            // colDay
+            // 
+            this.colDay.DataPropertyName = "numOfDays";
+            this.colDay.HeaderText = "Number of days";
+            this.colDay.MinimumWidth = 6;
+            this.colDay.Name = "colDay";
+            this.colDay.Width = 110;
+            // 
+            // colTotal
+            // 
+            this.colTotal.DataPropertyName = "total";
+            this.colTotal.HeaderText = "Total";
+            this.colTotal.MinimumWidth = 6;
+            this.colTotal.Name = "colTotal";
+            this.colTotal.Width = 70;
             // 
             // clbSession
             // 
@@ -134,6 +174,7 @@
             this.tbDose.Name = "tbDose";
             this.tbDose.Size = new System.Drawing.Size(70, 22);
             this.tbDose.TabIndex = 9;
+            this.tbDose.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDose_KeyPress);
             // 
             // tbNumDay
             // 
@@ -143,6 +184,7 @@
             this.tbNumDay.Name = "tbNumDay";
             this.tbNumDay.Size = new System.Drawing.Size(99, 22);
             this.tbNumDay.TabIndex = 10;
+            this.tbNumDay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNumDay_KeyPress);
             // 
             // btnAdd
             // 
@@ -150,7 +192,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.btnAdd.Location = new System.Drawing.Point(542, 573);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(133, 33);
             this.btnAdd.TabIndex = 12;
@@ -184,7 +226,7 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.btnSave.Location = new System.Drawing.Point(573, 512);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 26);
             this.btnSave.TabIndex = 15;
@@ -198,7 +240,7 @@
             this.btnReceive.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReceive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.btnReceive.Location = new System.Drawing.Point(228, 518);
-            this.btnReceive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReceive.Margin = new System.Windows.Forms.Padding(2);
             this.btnReceive.Name = "btnReceive";
             this.btnReceive.Size = new System.Drawing.Size(102, 26);
             this.btnReceive.TabIndex = 16;
@@ -219,46 +261,6 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "name";
-            this.colName.HeaderText = "Medicine name";
-            this.colName.MinimumWidth = 6;
-            this.colName.Name = "colName";
-            this.colName.Width = 180;
-            // 
-            // colSession
-            // 
-            this.colSession.DataPropertyName = "session";
-            this.colSession.HeaderText = "Session";
-            this.colSession.MinimumWidth = 6;
-            this.colSession.Name = "colSession";
-            this.colSession.Width = 150;
-            // 
-            // colDose
-            // 
-            this.colDose.DataPropertyName = "dose";
-            this.colDose.HeaderText = "Dose";
-            this.colDose.MinimumWidth = 6;
-            this.colDose.Name = "colDose";
-            this.colDose.Width = 99;
-            // 
-            // colDay
-            // 
-            this.colDay.DataPropertyName = "numOfDays";
-            this.colDay.HeaderText = "Number of days";
-            this.colDay.MinimumWidth = 6;
-            this.colDay.Name = "colDay";
-            this.colDay.Width = 110;
-            // 
-            // colTotal
-            // 
-            this.colTotal.DataPropertyName = "total";
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.MinimumWidth = 6;
-            this.colTotal.Name = "colTotal";
-            this.colTotal.Width = 70;
             // 
             // Form2
             // 

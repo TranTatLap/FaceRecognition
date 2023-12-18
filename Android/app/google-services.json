@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "764352363853",
+    "firebase_url": "https://facerecognition-6c037-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "facerecognition-6c037",
+    "storage_bucket": "facerecognition-6c037.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764352363853:android:3c0314bbe7f0827a3acb04",
+        "android_client_info": {
+          "package_name": "com.example.facerecognition"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkiRh6pOgqJHc6_u0Z_5jRWEkbbKvmyXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
