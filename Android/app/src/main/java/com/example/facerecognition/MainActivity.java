@@ -1,15 +1,23 @@
 package com.example.facerecognition;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
@@ -29,16 +37,12 @@ public class MainActivity extends AppCompatActivity {
         btn_scan.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), ScanQRActivity.class);
             startActivity(intent);
-            finish();
         });
 
         btn.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), GenerateQRActivity.class);
             startActivity(intent);
-            finish();
-
         });
-
 
     }
 

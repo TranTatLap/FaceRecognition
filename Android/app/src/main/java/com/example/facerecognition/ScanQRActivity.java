@@ -1,27 +1,42 @@
 package com.example.facerecognition;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.facerecognition.Class.Patient;
+import com.google.firebase.Firebase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ScanQRActivity extends AppCompatActivity {
 
-    Button btn;
+    Button btn,btn_get;
     EditText edt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_qractivity);
 
         btn = (Button) findViewById(R.id.btn_scanner);
+        btn_get = (Button) findViewById(R.id.btn_get);
         edt = (EditText) findViewById(R.id.edt_ID);
 
         btn.setOnClickListener(v -> {
@@ -32,6 +47,37 @@ public class ScanQRActivity extends AppCompatActivity {
             intentIntegrator.initiateScan();
 
         });
+        btn_get.setOnClickListener(v -> {
+            String ID = edt.getText().toString().trim();
+            if(ID.equals("")){
+                return;
+            }
+            FirebaseDatabase.getInstance().getReference().child("Patients").child(ID).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String id = snapshot.child("Id").getValue(String.class);
+                    String name = snapshot.child("Name").getValue(String.class);
+                    String phone = snapshot.child("Phone").getValue(String.class);
+                    String dob = snapshot.child("dob").getValue(String.class);
+                    String startDate = snapshot.child("start_date").getValue(String.class);
+                    String endDate = snapshot.child("end_date").getValue(String.class);
+                    String disease = snapshot.child("Diasease").getValue(String.class);
+
+                    Patient.patient_static = new Patient(id, name, disease, phone, dob, startDate, endDate);
+                    InfoFragment infoFragment = new InfoFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,infoFragment).commit();
+                    edt.setText(Patient.patient_static.Id);
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                }
+            });
+
+        });
+
+
     }
 
     @Override
