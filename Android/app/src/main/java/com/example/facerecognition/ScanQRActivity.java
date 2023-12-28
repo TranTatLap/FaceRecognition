@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -64,9 +67,22 @@ public class ScanQRActivity extends AppCompatActivity {
                     String disease = snapshot.child("Diasease").getValue(String.class);
 
                     Patient.patient_static = new Patient(id, name, disease, phone, dob, startDate, endDate);
+                    edt.setText(Patient.patient_static.Id);
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                }
+            });
+
+            FirebaseDatabase.getInstance().getReference().child("Images").child(ID).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String base64String = snapshot.child("Img").getValue(String.class);
+                    Patient.patient_static.img = base64String;
                     InfoFragment infoFragment = new InfoFragment();
                     getSupportFragmentManager().beginTransaction().replace(R.id.container,infoFragment).commit();
-                    edt.setText(Patient.patient_static.Id);
 
                 }
 

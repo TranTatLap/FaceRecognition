@@ -1,10 +1,13 @@
 package com.example.facerecognition;
 
 import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,6 +47,14 @@ public class InfoFragment extends Fragment {
             edt_disease.setText("Disease: " + Patient.patient_static.Disease);
             edt_phone.setText("Phone: " + Patient.patient_static.Phone);
             edt_dob.setText("Date of birth: " + Patient.patient_static.dob);
+
+            if(Patient.patient_static.img != null){
+                byte[] decodedBytes = Base64.decode(Patient.patient_static.img, Base64.DEFAULT);
+
+                Bitmap bm = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+
+                imageView.setImageBitmap(bm);
+            }
         }
 
     }

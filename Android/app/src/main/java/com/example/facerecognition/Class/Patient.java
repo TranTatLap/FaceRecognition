@@ -13,6 +13,8 @@ public class Patient {
     public String start_day;
     public String end_day;
 
+    public String img;
+
     public static Patient patient_static;
     public Patient(String id, String name, String disease, String phone, String dob, String start_day, String end_day) {
         Id = id;
