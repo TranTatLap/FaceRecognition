@@ -44,34 +44,36 @@ namespace FaceRecognize
                 MessageBox.Show("ID field cannot be blank");
                 return;
             }
-            var data = new Patient
-            {
-                Id = tbID.Text,
-                Name = tbName.Text,
-                Diasease = tbDisease.Text,
-                Phone = tbPhone.Text,
-                dob = dtpDoB.Text,
-                start_date = dtpStart.Text,
-                end_date = dtpEnd.Text
-
-            };
-            SetResponse response = await client.SetAsync("Patients/" + tbID.Text, data);
-            Patient result = response.ResultAs<Patient>();
-
             MemoryStream ms = new MemoryStream();
             pbImage.Image.Save(ms, ImageFormat.Jpeg);
 
             byte[] a = ms.GetBuffer();
 
-            String output = Convert.ToBase64String(a);
-
-            var img = new Image_class
+            String img_base64 = Convert.ToBase64String(a);
+            var data = new Patient
             {
-                Img = output
-            };
+                Id = tbID.Text,
+                Name = tbName.Text,
+                Disease = tbDisease.Text,
+                Phone = tbPhone.Text,
+                dob = dtpDoB.Text,
+                start_date = dtpStart.Text,
+                end_date = dtpEnd.Text,
+                Img = img_base64
 
-            SetResponse response2 = await client.SetAsync("Images/" + tbID.Text, img);
-            Image_class result2 = response.ResultAs<Image_class>();
+            };
+            SetResponse response = await client.SetAsync("Patients/" + tbID.Text, data);
+            Patient result = response.ResultAs<Patient>();
+
+           
+
+            //var img = new Image_class
+            //{
+            //    Img = output
+            //};
+
+            //SetResponse response2 = await client.SetAsync("Images/" + tbID.Text, img);
+            //Image_class result2 = response.ResultAs<Image_class>();
 
             MessageBox.Show("Patient added! \n Id: " + result.Id);
         }
@@ -121,25 +123,13 @@ namespace FaceRecognize
             {
                 tbID.Text = obj.Id;
                 tbName.Text = obj.Name;
-                tbDisease.Text = obj.Diasease;
+                tbDisease.Text = obj.Disease;
                 tbPhone.Text = obj.Phone;
                 dtpDoB.Value = DateTime.ParseExact(obj.dob, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 dtpStart.Value = DateTime.ParseExact(obj.start_date, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 dtpEnd.Value = DateTime.ParseExact(obj.end_date, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-            }
-            else
-            {
-                clear_All_textBox();
-                pbImage.Image = Image.FromFile(basePath + @"Resources\pngegg.png");
-                MessageBox.Show("No patient was found");
-            }
 
-            FirebaseResponse response2 = await client.GetAsync("Images/" + tbID.Text);
-            Image_class obj2 = response2.ResultAs<Image_class>();
-
-            if (obj2 != null && obj2.Img != null)
-            {
-                byte[] b = Convert.FromBase64String(obj2.Img);
+                byte[] b = Convert.FromBase64String(obj.Img);
 
                 MemoryStream ms = new MemoryStream();
                 ms.Write(b, 0, Convert.ToInt32(b.Length));
@@ -152,9 +142,32 @@ namespace FaceRecognize
             }
             else
             {
+                clear_All_textBox();
                 pbImage.Image = Image.FromFile(basePath + @"Resources\pngegg.png");
-                MessageBox.Show("No image was found");
+                MessageBox.Show("No patient was found");
             }
+
+            //FirebaseResponse response2 = await client.GetAsync("Images/" + tbID.Text);
+            //Image_class obj2 = response2.ResultAs<Image_class>();
+
+            //if (obj2 != null && obj2.Img != null)
+            //{
+            //    byte[] b = Convert.FromBase64String(obj2.Img);
+
+            //    MemoryStream ms = new MemoryStream();
+            //    ms.Write(b, 0, Convert.ToInt32(b.Length));
+
+            //    Bitmap bm = new Bitmap(ms, false);
+
+            //    ms.Dispose();
+
+            //    pbImage.Image = bm;
+            //}
+            //else
+            //{
+            //    pbImage.Image = Image.FromFile(basePath + @"Resources\pngegg.png");
+            //    MessageBox.Show("No image was found");
+            //}
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

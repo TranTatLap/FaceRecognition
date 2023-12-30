@@ -12,11 +12,13 @@ public class Patient {
     public String dob;
     public String start_day;
     public String end_day;
-
     public String img;
 
     public static Patient patient_static;
-    public Patient(String id, String name, String disease, String phone, String dob, String start_day, String end_day) {
+    public Patient() {
+
+    }
+    public Patient(String id, String name, String disease, String phone, String dob, String start_day, String end_day, String img) {
         Id = id;
         Name = name;
         Disease = disease;
@@ -24,6 +26,7 @@ public class Patient {
         this.dob = dob;
         this.start_day = start_day;
         this.end_day = end_day;
+        this.img = img;
     }
 
     private Date parseDate(String dateString) {

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:layout_marginBottom="10dp"
+    tools:context=".SessionFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_morning_ss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Morning"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="#DCCC46"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/tv_morning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#5C5C5C"
+            android:textSize="25dp"
+            android:layout_below="@id/tv_morning_ss"/>
+
+        <TextView
+            android:id="@+id/tv_noon_ss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Noon"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="#E16A61"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/tv_morning"/>
+
+        <TextView
+            android:id="@+id/tv_noon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#5C5C5C"
+            android:textSize="25dp"
+            android:layout_below="@id/tv_noon_ss"/>
+
+        <TextView
+            android:id="@+id/tv_evening_ss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Evening"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="#0781E3"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/tv_noon"/>
+
+        <TextView
+            android:id="@+id/tv_evening"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#5C5C5C"
+            android:textSize="25dp"
+            android:layout_below="@id/tv_evening_ss"/>
+
+    </RelativeLayout>
+
+
+</ScrollView>
