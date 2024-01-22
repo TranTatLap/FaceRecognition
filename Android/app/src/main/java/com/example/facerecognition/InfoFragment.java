@@ -35,15 +35,18 @@ public class InfoFragment extends Fragment {
     @SuppressLint("SetTextI18n")
     private void initEvent() {
         if(Patient.patient_static != null){
-            edt_id.setText("ID: " + Patient.patient_static.Id);
-            edt_name.setText("Name: " + Patient.patient_static.Name);
-            edt_disease.setText("Disease: " + Patient.patient_static.Disease);
-            edt_phone.setText("Phone: " + Patient.patient_static.Phone);
-            edt_dob.setText("Date of birth: " + Patient.patient_static.dob);
-
-            byte[] decodedBytes = Base64.decode(Patient.patient_static.img, Base64.DEFAULT);
-            Bitmap bm = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
-            imageView.setImageBitmap(bm);
+            if(Patient.patient_static.Id != null) {
+                edt_id.setText("ID: " + Patient.patient_static.Id);
+                edt_name.setText("Name: " + Patient.patient_static.Name);
+                edt_disease.setText("Disease: " + Patient.patient_static.Disease);
+                edt_phone.setText("Phone: " + Patient.patient_static.Phone);
+                edt_dob.setText("Date of birth: " + Patient.patient_static.dob);
+            }
+            if(Patient.patient_static.img != null) {
+                byte[] decodedBytes = Base64.decode(Patient.patient_static.img, Base64.DEFAULT);
+                Bitmap bm = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+                imageView.setImageBitmap(bm);
+            }
 
         }
     }

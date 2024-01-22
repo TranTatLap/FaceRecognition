@@ -10,13 +10,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.ColorSpace;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.facerecognition.Adapter.DepthPageTransformer;
@@ -43,7 +48,8 @@ public class ScanQRActivity extends AppCompatActivity {
     EditText edt;
     ViewPager2 viewPager2;
     BottomNavigationView bottomNavigationView;
-
+    ProgressBar progressBar;
+    RelativeLayout layout_loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +68,21 @@ public class ScanQRActivity extends AppCompatActivity {
         viewPager2 = (ViewPager2) findViewById(R.id.view_pager2);
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 
+        progressBar = (ProgressBar) findViewById(R.id.progressbar);
+        layout_loading = (RelativeLayout) findViewById(R.id.layout);
+
 
 
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Patient.patient_static = new Patient();
+    }
+
     private void initEvent() {
+        setUp();
         btn.setOnClickListener(v -> {
             IntentIntegrator intentIntegrator = new IntentIntegrator(ScanQRActivity.this);
             intentIntegrator.setOrientationLocked(true);
@@ -78,6 +95,10 @@ public class ScanQRActivity extends AppCompatActivity {
             String ID = edt.getText().toString().trim();
             if(ID.equals("")){
                 Toast.makeText(getApplicationContext(),"Patient ID cannot be blanked",Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if(Patient.patient_static != null && ID.equals(Patient.patient_static.Id)){
+                Toast.makeText(getApplicationContext(),"This patient's information is showed",Toast.LENGTH_SHORT).show();
                 return;
             }
             FirebaseDatabase.getInstance().getReference().child("Patients").child(ID).addValueEventListener(new ValueEventListener() {
@@ -94,7 +115,15 @@ public class ScanQRActivity extends AppCompatActivity {
 
                     Patient.patient_static = new Patient(id, name, disease, phone, dob, startDate, endDate, img);
                     edt.setText(Patient.patient_static.Id);
-                    Toast.makeText(getApplicationContext(),"Patient information was retrieved successfully",Toast.LENGTH_SHORT).show();
+//                    setUp_loading();
+                    setUp();
+                    if (Patient.patient_static.Id != null) {
+                        Toast.makeText(getApplicationContext(), "Patient information was retrieved successfully!", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "No patient found!", Toast.LENGTH_SHORT).show();
+                    }
+
 
                 }
                 @Override
@@ -118,9 +147,29 @@ public class ScanQRActivity extends AppCompatActivity {
                 public void onCancelled(@NonNull DatabaseError error) {
                 }
             });
-
         });
+    }
 
+    private void setUp_loading() {
+        progressBar.setVisibility(View.VISIBLE);
+        layout_loading.setVisibility(View.VISIBLE);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressBar.setVisibility(View.GONE);
+                layout_loading.setVisibility(View.GONE);
+                setUp();
+                if (Patient.patient_static.Id != null) {
+                    Toast.makeText(getApplicationContext(), "Patient information was retrieved successfully!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "No patient found!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        },1000);
+    }
+
+    private void setUp() {
         ViewPager2Adapter adapter = new ViewPager2Adapter(this);
         viewPager2.setAdapter(adapter);
         viewPager2.setPageTransformer(new DepthPageTransformer());
@@ -143,26 +192,22 @@ public class ScanQRActivity extends AppCompatActivity {
             }
         });
 
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    switch (item.getItemId()){
-                        case 2131231001:
-                            viewPager2.setCurrentItem(0);
-                            break;
-                        case 2131231003:
-                            viewPager2.setCurrentItem(1);
-                            break;
-                        case 2131231002:
-                            viewPager2.setCurrentItem(2);
-                            break;
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case 2131231001:
+                    viewPager2.setCurrentItem(0);
+                    break;
+                case 2131231003:
+                    viewPager2.setCurrentItem(1);
+                    break;
+                case 2131231002:
+                    viewPager2.setCurrentItem(2);
+                    break;
 
-                    }
-                return true;
             }
+            return true;
         });
     }
-
 
 
     @Override

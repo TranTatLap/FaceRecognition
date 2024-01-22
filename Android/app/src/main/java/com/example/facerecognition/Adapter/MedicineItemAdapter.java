@@ -35,7 +35,7 @@ public class MedicineItemAdapter extends RecyclerView.Adapter<MedicineItemAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.layout.startAnimation(AnimationUtils.loadAnimation(context,R.anim.scroll));
+//        holder.layout.startAnimation(AnimationUtils.loadAnimation(context,R.anim.scroll));
 
         holder.name.setText(list.get(position).name);
         holder.dose.setText(String.valueOf(list.get(position).dose));
