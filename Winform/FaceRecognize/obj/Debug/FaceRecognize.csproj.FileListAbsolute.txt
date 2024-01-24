@@ -104,3 +104,4 @@ D:\Document\GitHub\FaceRecognition\Winform\FaceRecognize\obj\Debug\FaceRecognize
 D:\Document\GitHub\FaceRecognition\Winform\FaceRecognize\obj\Debug\FaceRecognize.csproj.CopyComplete
 D:\Document\GitHub\FaceRecognition\Winform\FaceRecognize\obj\Debug\FaceRecognize.exe
 D:\Document\GitHub\FaceRecognition\Winform\FaceRecognize\obj\Debug\FaceRecognize.pdb
+D:\Document\GitHub\FaceRecognition\Winform\FaceRecognize\obj\Debug\FaceRecognize.Form4.resources

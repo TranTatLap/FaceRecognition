@@ -14,13 +14,16 @@ namespace FaceRecognize
         public int numOfDays { get; set; }
         public int total { get; set; }
 
-        public Medicine(String name, String session, int dose, int numofday, int total) { 
-            this.name = name;  
+        public String note { get; set; }
+
+        public Medicine(String name, String session, int dose, int numofday, int total, string note)
+        {
+            this.name = name;
             this.session = session;
             this.dose = dose;
             this.numOfDays = numofday;
             this.total = total;
-           
+            this.note = note;
         }
     }
 }

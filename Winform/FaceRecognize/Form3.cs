@@ -185,8 +185,8 @@ namespace FaceRecognize
 
         private void btnPres_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2(tbID.Text.Trim());
-            f2.Show();
+            Form2 form = new Form2(tbID.Text.Trim());
+            form.ShowDialog();
 
         }
 

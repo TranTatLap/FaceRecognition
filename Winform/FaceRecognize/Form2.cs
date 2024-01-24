@@ -52,7 +52,8 @@ namespace FaceRecognize
             }
             int days = int.Parse(tbNumDay.Text.Trim());
             int total = dose * clbSession.CheckedItems.Count * days;
-            Medicine med = new Medicine(tbMedName.Text.Trim(), session, dose, days, total);
+
+            Medicine med = new Medicine(tbMedName.Text.Trim(), session, dose, days, total, tbNote.Text);
 
             list.Add(med);
             gridPres.DataSource = null;
@@ -74,6 +75,8 @@ namespace FaceRecognize
             gridPres.Columns[3].Width = 110;
             gridPres.Columns[4].HeaderText = "Total";
             gridPres.Columns[4].Width = 70;
+            gridPres.Columns[5].HeaderText = "Note";
+            gridPres.Columns[5].Width = 260;
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -86,7 +89,7 @@ namespace FaceRecognize
             bool f = false;
             foreach(Medicine medicine in list)
             {
-                var data = new Medicine(medicine.name, medicine.session, medicine.dose, medicine.numOfDays, medicine.total);
+                var data = new Medicine(medicine.name, medicine.session, medicine.dose, medicine.numOfDays, medicine.total, medicine.note);
              
                 SetResponse response = await client.SetAsync("Prescriptions/" + tbID.Text +"/" +medicine.name, data);
                 Patient result = response.ResultAs<Patient>();
@@ -124,6 +127,8 @@ namespace FaceRecognize
             formatGridView();
 
             gridPres.Refresh();
+            MessageBox.Show("Patient's prescription was loaded!\n" +"ID: " + tbID.Text);
+
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -182,6 +187,16 @@ namespace FaceRecognize
             {
                 e.Handled = true;
             }
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

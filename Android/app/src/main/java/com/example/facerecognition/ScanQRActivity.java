@@ -193,18 +193,15 @@ public class ScanQRActivity extends AppCompatActivity {
         });
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()){
-                case 2131231001:
-                    viewPager2.setCurrentItem(0);
-                    break;
-                case 2131231003:
-                    viewPager2.setCurrentItem(1);
-                    break;
-                case 2131231002:
-                    viewPager2.setCurrentItem(2);
-                    break;
-
+            int id_item = item.getItemId();
+            if(id_item == R.id.menu_info){
+                viewPager2.setCurrentItem(0);
+            } else if (id_item == R.id.menu_session) {
+                viewPager2.setCurrentItem(1);
+            } else {
+                viewPager2.setCurrentItem(2);
             }
+
             return true;
         });
     }
