@@ -41,10 +41,10 @@
             this.btnFaceRecognition.BackColor = System.Drawing.Color.White;
             this.btnFaceRecognition.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFaceRecognition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.btnFaceRecognition.Location = new System.Drawing.Point(741, 153);
-            this.btnFaceRecognition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFaceRecognition.Location = new System.Drawing.Point(556, 124);
+            this.btnFaceRecognition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFaceRecognition.Name = "btnFaceRecognition";
-            this.btnFaceRecognition.Size = new System.Drawing.Size(212, 38);
+            this.btnFaceRecognition.Size = new System.Drawing.Size(159, 31);
             this.btnFaceRecognition.TabIndex = 17;
             this.btnFaceRecognition.Text = "Recognition System";
             this.btnFaceRecognition.UseVisualStyleBackColor = false;
@@ -55,10 +55,10 @@
             this.btnAbout.BackColor = System.Drawing.Color.White;
             this.btnAbout.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.btnAbout.Location = new System.Drawing.Point(741, 282);
-            this.btnAbout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAbout.Location = new System.Drawing.Point(556, 229);
+            this.btnAbout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(212, 38);
+            this.btnAbout.Size = new System.Drawing.Size(159, 31);
             this.btnAbout.TabIndex = 18;
             this.btnAbout.Text = "About";
             this.btnAbout.UseVisualStyleBackColor = false;
@@ -69,10 +69,10 @@
             this.btnPres.BackColor = System.Drawing.Color.White;
             this.btnPres.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.btnPres.Location = new System.Drawing.Point(741, 239);
-            this.btnPres.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPres.Location = new System.Drawing.Point(556, 194);
+            this.btnPres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPres.Name = "btnPres";
-            this.btnPres.Size = new System.Drawing.Size(212, 38);
+            this.btnPres.Size = new System.Drawing.Size(159, 31);
             this.btnPres.TabIndex = 19;
             this.btnPres.Text = "Prescription";
             this.btnPres.UseVisualStyleBackColor = false;
@@ -83,10 +83,10 @@
             this.btnInfo.BackColor = System.Drawing.Color.White;
             this.btnInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.btnInfo.Location = new System.Drawing.Point(741, 196);
-            this.btnInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInfo.Location = new System.Drawing.Point(556, 159);
+            this.btnInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(212, 38);
+            this.btnInfo.Size = new System.Drawing.Size(159, 31);
             this.btnInfo.TabIndex = 20;
             this.btnInfo.Text = "Information";
             this.btnInfo.UseVisualStyleBackColor = false;
@@ -97,22 +97,22 @@
             this.btnQuit.BackColor = System.Drawing.Color.White;
             this.btnQuit.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.btnQuit.Location = new System.Drawing.Point(741, 324);
-            this.btnQuit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQuit.Location = new System.Drawing.Point(556, 263);
+            this.btnQuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(212, 38);
+            this.btnQuit.Size = new System.Drawing.Size(159, 31);
             this.btnQuit.TabIndex = 21;
-            this.btnQuit.Text = "Quit";
+            this.btnQuit.Text = "Exit";
             this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnPres);
@@ -120,7 +120,6 @@
             this.Controls.Add(this.btnFaceRecognition);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

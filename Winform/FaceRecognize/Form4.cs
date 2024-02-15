@@ -53,7 +53,7 @@ namespace FaceRecognize
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }

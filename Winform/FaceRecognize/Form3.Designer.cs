@@ -66,7 +66,7 @@
             // 
             this.tbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbID.Location = new System.Drawing.Point(209, 252);
-            this.tbID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbID.Margin = new System.Windows.Forms.Padding(4);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(528, 29);
             this.tbID.TabIndex = 1;
@@ -75,7 +75,7 @@
             // 
             this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.Location = new System.Drawing.Point(209, 289);
-            this.tbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(528, 29);
             this.tbName.TabIndex = 3;
@@ -109,7 +109,7 @@
             this.dtpStart.CustomFormat = "MM/dd/yyyy";
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStart.Location = new System.Drawing.Point(209, 459);
-            this.dtpStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpStart.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(265, 22);
             this.dtpStart.TabIndex = 6;
@@ -131,7 +131,7 @@
             this.dtpEnd.CustomFormat = "MM/dd/yyyy";
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEnd.Location = new System.Drawing.Point(209, 496);
-            this.dtpEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(265, 22);
             this.dtpEnd.TabIndex = 9;
@@ -140,7 +140,7 @@
             // 
             this.tbDisease.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDisease.Location = new System.Drawing.Point(209, 326);
-            this.tbDisease.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbDisease.Margin = new System.Windows.Forms.Padding(4);
             this.tbDisease.Name = "tbDisease";
             this.tbDisease.Size = new System.Drawing.Size(528, 29);
             this.tbDisease.TabIndex = 11;
@@ -161,7 +161,7 @@
             // 
             this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPhone.Location = new System.Drawing.Point(209, 363);
-            this.tbPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPhone.Margin = new System.Windows.Forms.Padding(4);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(528, 29);
             this.tbPhone.TabIndex = 13;
@@ -210,7 +210,7 @@
             // 
             this.pbImage.Image = ((System.Drawing.Image)(resources.GetObject("pbImage.Image")));
             this.pbImage.Location = new System.Drawing.Point(209, 15);
-            this.pbImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbImage.Margin = new System.Windows.Forms.Padding(4);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(384, 230);
             this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -223,7 +223,7 @@
             this.dtpDoB.CustomFormat = "MM/dd/yyyy";
             this.dtpDoB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDoB.Location = new System.Drawing.Point(208, 407);
-            this.dtpDoB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDoB.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDoB.Name = "dtpDoB";
             this.dtpDoB.Size = new System.Drawing.Size(265, 22);
             this.dtpDoB.TabIndex = 19;
@@ -243,7 +243,7 @@
             // btnPres
             // 
             this.btnPres.Location = new System.Drawing.Point(747, 331);
-            this.btnPres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPres.Margin = new System.Windows.Forms.Padding(4);
             this.btnPres.Name = "btnPres";
             this.btnPres.Size = new System.Drawing.Size(32, 28);
             this.btnPres.TabIndex = 20;
@@ -275,7 +275,7 @@
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

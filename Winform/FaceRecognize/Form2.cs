@@ -98,7 +98,7 @@ namespace FaceRecognize
             }
             if (f)
             {
-                MessageBox.Show("Fail!!! \n Id: " + tbID.Text);
+                MessageBox.Show("Failed! \n Id: " + tbID.Text);
             }
             else
             {

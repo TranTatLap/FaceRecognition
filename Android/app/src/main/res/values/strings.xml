@@ -8,13 +8,13 @@
 
     <string name="name">full name</string>
     <string name="email">email</string>
-    <string name="dob">date of birth</string>
+    <string name="dob">date of birth(dd/mm/yyyy)</string>
     <string name="password">password</string>
     <string name="register">Register</string>
     <string name="click_to_login">Click To Login</string>
     <string name="login">Login</string>
     <string name="have_an_account_click_to_login">Have an account ? Back to login</string>
     <string name="not_yet_registered_signup_now">Do not have an account? Register now</string>
-    <string name="confirm_password">Confirm Password</string>
+    <string name="confirm_password">confirm password</string>
     <string name="logout">Logout</string>
 </resources>

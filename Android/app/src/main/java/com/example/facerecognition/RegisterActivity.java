@@ -3,6 +3,7 @@ package com.example.facerecognition;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -27,6 +29,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.time.Month;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class RegisterActivity extends AppCompatActivity {
     EditText edt_Email, edt_Password, edt_Confirm, edt_Name, edt_Dob;
     Button btn_register;
@@ -34,6 +40,8 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
 
     ProgressBar progressBar;
+
+    DatePickerDialog pickerDialog;
     static final String TAG = "RegisterActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +59,25 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
+        });
+
+        edt_Dob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar calendar = Calendar.getInstance();
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+                int month = calendar.get(Calendar.MONTH);
+                int year = calendar.get(Calendar.YEAR);
+
+                pickerDialog = new DatePickerDialog(RegisterActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        edt_Dob.setText(day+"/"+(month+1)+"/"+year);
+                    }
+                },year,month,day);
+                pickerDialog.show();
+            }
+
         });
 
         btn_register.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +114,6 @@ public class RegisterActivity extends AppCompatActivity {
                 }else {
                     progressBar.setVisibility(View.VISIBLE);
                     register(email, password, name, dob);
-
                 }
 
             }

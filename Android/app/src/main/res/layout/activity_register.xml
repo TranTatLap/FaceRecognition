@@ -66,6 +66,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableStart="@drawable/ic_date"
                 android:drawablePadding="8dp"
+                android:focusable="false"
                 android:hint="@string/dob"
                 android:padding="8dp"
                 android:textColor="@color/black"

@@ -40,10 +40,10 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.pbAvatar = new System.Windows.Forms.PictureBox();
-            this.tbId = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbDoB = new System.Windows.Forms.TextBox();
+            this.tbId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picRes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
@@ -168,20 +168,9 @@
             this.pbAvatar.TabIndex = 12;
             this.pbAvatar.TabStop = false;
             // 
-            // tbId
-            // 
-            this.tbId.BackColor = System.Drawing.SystemColors.Window;
-            this.tbId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbId.ForeColor = System.Drawing.Color.Aqua;
-            this.tbId.Location = new System.Drawing.Point(915, 413);
-            this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(100, 22);
-            this.tbId.TabIndex = 13;
-            this.tbId.Text = "123455";
-            // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
@@ -191,11 +180,13 @@
             this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.ForeColor = System.Drawing.Color.White;
-            this.tbName.Location = new System.Drawing.Point(933, 499);
+            this.tbName.Location = new System.Drawing.Point(939, 499);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(248, 22);
+            this.tbName.ReadOnly = true;
+            this.tbName.Size = new System.Drawing.Size(246, 22);
             this.tbName.TabIndex = 14;
             this.tbName.Text = "Wonder Woman";
+            this.tbName.WordWrap = false;
             // 
             // tbDoB
             // 
@@ -205,9 +196,25 @@
             this.tbDoB.ForeColor = System.Drawing.Color.White;
             this.tbDoB.Location = new System.Drawing.Point(937, 546);
             this.tbDoB.Name = "tbDoB";
+            this.tbDoB.ReadOnly = true;
             this.tbDoB.Size = new System.Drawing.Size(248, 22);
             this.tbDoB.TabIndex = 15;
             this.tbDoB.Text = "10/10/2022";
+            this.tbDoB.WordWrap = false;
+            // 
+            // tbId
+            // 
+            this.tbId.BackColor = System.Drawing.Color.White;
+            this.tbId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
+            this.tbId.Location = new System.Drawing.Point(977, 414);
+            this.tbId.Name = "tbId";
+            this.tbId.ReadOnly = true;
+            this.tbId.Size = new System.Drawing.Size(109, 22);
+            this.tbId.TabIndex = 13;
+            this.tbId.Text = "123455";
+            this.tbId.WordWrap = false;
             // 
             // Form1
             // 
@@ -215,7 +222,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1277, 720);
+            this.ClientSize = new System.Drawing.Size(1279, 718);
             this.Controls.Add(this.tbDoB);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.tbId);
@@ -223,11 +230,11 @@
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.picCam);
-            this.Controls.Add(this.picRes);
             this.Controls.Add(this.btnTake);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.cbTypeCam);
+            this.Controls.Add(this.picRes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -257,10 +264,10 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.PictureBox pbAvatar;
-        private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbDoB;
+        private System.Windows.Forms.TextBox tbId;
     }
 }
 
