@@ -14,30 +14,12 @@ using FireSharp.Interfaces;
 using System.Security.Cryptography;
 using FireSharp.Response;
 using Newtonsoft.Json;
+using RestSharp.Authenticators;
 
 namespace FaceRecognize
 {
     public partial class Form_signup : Form
     {
-        public static FirebaseAuthConfig config = new FirebaseAuthConfig
-        {
-            ApiKey = "AIzaSyCkiRh6pOgqJHc6_u0Z_5jRWEkbbKvmyXY",
-            AuthDomain = "facerecognition-6c037.firebaseapp.com",
-            Providers = new FirebaseAuthProvider[]
-            {
-                new EmailProvider()
-            }
-
-        };
-        FirebaseAuthClient client = new FirebaseAuthClient(config);
-
-        IFirebaseClient mclient;
-        IFirebaseConfig mconfig = new FirebaseConfig
-        {
-            AuthSecret = "G4GUZnW4cd9AkPP7NOzYGy55NoPWtzxd7lI7nygU",
-            BasePath = "https://facerecognition-6c037-default-rtdb.asia-southeast1.firebasedatabase.app/"
-
-        };
         public Form_signup()
         {
             InitializeComponent();
@@ -63,12 +45,13 @@ namespace FaceRecognize
             {
                 try
                 {
-                    var auth = await client.CreateUserWithEmailAndPasswordAsync(tbEmail.Text.Trim(), tbPass.Text);
+                    var auth = await Auth.authClient.CreateUserWithEmailAndPasswordAsync(tbEmail.Text.Trim(), tbPass.Text);
                     var user = auth.User;
                     String uid = null;
                     if (user != null)
                     {
                         uid = user.Uid.ToString();
+                        Auth.uid = uid;
                     }
                     else
                     {
@@ -79,7 +62,7 @@ namespace FaceRecognize
 
                     var data = new User(tbFullname.Text.Trim(), dtpDoB.Text.Trim());
 
-                    SetResponse response = await mclient.SetAsync("Users/" + uid, data);
+                    SetResponse response = await Auth.mclient.SetAsync("Users/" + uid, data);
                     Patient result = response.ResultAs<Patient>();
                     if (result == null)
                     {
@@ -97,7 +80,16 @@ namespace FaceRecognize
                 {
                     pbLoading.Visible = false;
                     string[] parts = ex.Message.Split(' ');
-                    MessageBox.Show(parts[parts.Length - 1]);
+                    if( ex.Message.Length > 50)
+                    {
+                        MessageBox.Show(parts[parts.Length - 1]);
+                    }
+                    else
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                    
                 }
 
             }
@@ -107,8 +99,9 @@ namespace FaceRecognize
 
         private void Form_signup_Load(object sender, EventArgs e)
         {
-            mclient = new FireSharp.FirebaseClient(mconfig);
-            if (mclient == null)
+            Auth.mclient  = new FireSharp.FirebaseClient(Auth.mconfig);
+            //mclient = new FireSharp.FirebaseClient(Auth.mconfig);
+            if (Auth.mclient == null)
             {
                 MessageBox.Show("Connection to database failed");
             }

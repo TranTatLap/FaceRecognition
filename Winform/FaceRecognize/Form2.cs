@@ -24,21 +24,16 @@ namespace FaceRecognize
     public partial class Form2 : Form
     {
         List<Medicine> list = new List<Medicine>();
-        IFirebaseClient client;
-        private String Id;
-        IFirebaseConfig config = new FirebaseConfig
-        {
-            AuthSecret = "G4GUZnW4cd9AkPP7NOzYGy55NoPWtzxd7lI7nygU",
-            BasePath = "https://facerecognition-6c037-default-rtdb.asia-southeast1.firebasedatabase.app/"
-
-        };
-        public Form2(String id = "")
+        public Form2(String id=null)
         {
             InitializeComponent();
-            Id = id;
-            if (Id != "")
+            if (Auth.client_id != null)
             {
-                tbID.Text = Id;
+                tbID.Text = Auth.client_id;
+            }
+            else if (id != null)
+            {
+                tbID.Text = id; 
             }
         }
 
@@ -91,7 +86,7 @@ namespace FaceRecognize
             {
                 var data = new Medicine(medicine.name, medicine.session, medicine.dose, medicine.numOfDays, medicine.total, medicine.note);
              
-                SetResponse response = await client.SetAsync("Prescriptions/" + tbID.Text +"/" +medicine.name, data);
+                SetResponse response = await Auth.mclient.SetAsync("Prescriptions/" + tbID.Text +"/" +medicine.name, data);
                 Patient result = response.ResultAs<Patient>();
                 if (result == null) { f = true; }
 
@@ -108,7 +103,7 @@ namespace FaceRecognize
         }
         private async void receiveInfo()
         {
-            FirebaseResponse response = await client.GetAsync("Prescriptions/" + tbID.Text);
+            FirebaseResponse response = await Auth.mclient.GetAsync("Prescriptions/" + tbID.Text);
             Dictionary<string, Medicine> data = JsonConvert.DeserializeObject<Dictionary<string, Medicine>>(response.Body.ToString());
             if(data == null)
             {
@@ -132,16 +127,9 @@ namespace FaceRecognize
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            client = new FireSharp.FirebaseClient(config);
-            if (client == null)
-            {
-                MessageBox.Show("Connection to database failed");
-            }
-
-            if(Id != "")
+            if(tbID.Text != "")
             {
                 receiveInfo();
-
             }
         }
 
@@ -187,16 +175,6 @@ namespace FaceRecognize
             {
                 e.Handled = true;
             }
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
         }
     }

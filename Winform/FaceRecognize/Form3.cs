@@ -20,21 +20,12 @@ namespace FaceRecognize
     public partial class Form3 : Form
     {
         String basePath = @"..\..\";
-        IFirebaseClient client;
-        private String Id;
-        IFirebaseConfig config = new FirebaseConfig
-        {
-            AuthSecret = "G4GUZnW4cd9AkPP7NOzYGy55NoPWtzxd7lI7nygU",
-            BasePath = "https://facerecognition-6c037-default-rtdb.asia-southeast1.firebasedatabase.app/"
-
-        };
-        public Form3(String id = "")
+        public Form3()
         {
             InitializeComponent();
-            Id = id;
-            if (Id != "")
+            if (Auth.client_id != null)
             {
-                tbID.Text = Id;
+                tbID.Text = Auth.client_id;
             }
         }
         private async void btnAdd_Click(object sender, EventArgs e)
@@ -62,7 +53,7 @@ namespace FaceRecognize
                 Img = img_base64
 
             };
-            SetResponse response = await client.SetAsync("Patients/" + tbID.Text, data);
+            SetResponse response = await Auth.mclient.SetAsync("Patients/" + tbID.Text, data);
             Patient result = response.ResultAs<Patient>();
 
            
@@ -100,13 +91,8 @@ namespace FaceRecognize
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            client = new FireSharp.FirebaseClient(config);
-            if (client == null)
-            {
-                MessageBox.Show("Connection to database failed");
-            }
             
-            if(Id != "")
+            if(Auth.client_id != null)
             {
                 receiveInfo();
                 
@@ -116,7 +102,7 @@ namespace FaceRecognize
 
         private async void receiveInfo()
         {
-            FirebaseResponse response = await client.GetAsync("Patients/" + tbID.Text);
+            FirebaseResponse response = await Auth.mclient.GetAsync("Patients/" + tbID.Text);
             Patient obj = response.ResultAs<Patient>();
 
             if (obj != null)
@@ -185,7 +171,7 @@ namespace FaceRecognize
 
         private void btnPres_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2(tbID.Text.Trim());
+            Form2 form = new Form2(tbID.Text);
             form.ShowDialog();
 
         }

@@ -17,17 +17,17 @@ namespace FaceRecognize
 {
     public partial class Form_login : Form
     {
-        public static FirebaseAuthConfig config = new FirebaseAuthConfig
-        {
-            ApiKey = "AIzaSyCkiRh6pOgqJHc6_u0Z_5jRWEkbbKvmyXY",
-            AuthDomain = "facerecognition-6c037.firebaseapp.com",
-            Providers = new FirebaseAuthProvider[]
-            {
-                new EmailProvider()
-            }
+        //public static FirebaseAuthConfig config = new FirebaseAuthConfig
+        //{
+        //    ApiKey = "AIzaSyCkiRh6pOgqJHc6_u0Z_5jRWEkbbKvmyXY",
+        //    AuthDomain = "facerecognition-6c037.firebaseapp.com",
+        //    Providers = new FirebaseAuthProvider[]
+        //    {
+        //        new EmailProvider()
+        //    }
 
-        };
-        FirebaseAuthClient client = new FirebaseAuthClient(config);
+        //};
+        //FirebaseAuthClient client = new FirebaseAuthClient(config);
         public Form_login()
         {
             InitializeComponent();
@@ -38,10 +38,19 @@ namespace FaceRecognize
             pbLoading.Visible = true;
             try
             {
-                _ = await client.SignInWithEmailAndPasswordAsync(tbEmail.Text,tbPass.Text);
+                _ = await Auth.authClient.SignInWithEmailAndPasswordAsync(tbEmail.Text,tbPass.Text);
                 pbLoading.Visible = false;
                 tbPass.Clear();
                 tbEmail.Clear();
+
+                Auth.mclient = new FireSharp.FirebaseClient(Auth.mconfig);
+
+                if (Auth.mclient == null)
+                {
+                    MessageBox.Show("Connection to database failed");
+                    return;
+                }
+
                 this.Hide();
                 Form4 form = new Form4();
                 form.ShowDialog();

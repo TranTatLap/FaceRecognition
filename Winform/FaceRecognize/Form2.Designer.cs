@@ -246,7 +246,6 @@
             this.tbNote.Name = "tbNote";
             this.tbNote.Size = new System.Drawing.Size(664, 112);
             this.tbNote.TabIndex = 19;
-            this.tbNote.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
@@ -259,7 +258,6 @@
             this.label5.Size = new System.Drawing.Size(48, 20);
             this.label5.TabIndex = 18;
             this.label5.Text = "Note";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // colName
             // 

@@ -22,19 +22,8 @@ namespace FaceRecognize
     {
         private FilterInfoCollection cameras;
         private VideoCaptureDevice cam;
-        private Rectangle originalRectangel;
-        private Rectangle originalFormSize;
         private Form3 f3;
         String basePath = @"..\..\";
-        IFirebaseClient client;
-
-        IFirebaseConfig config = new FirebaseConfig
-        {
-            AuthSecret = "G4GUZnW4cd9AkPP7NOzYGy55NoPWtzxd7lI7nygU",
-            BasePath = "https://facerecognition-6c037-default-rtdb.asia-southeast1.firebasedatabase.app/"
-
-        };
-
         public Form1()
         {
             InitializeComponent();
@@ -43,7 +32,11 @@ namespace FaceRecognize
             {
                 cbTypeCam.Items.Add(info.Name);
             }
-            cbTypeCam.SelectedIndex = 0;
+            try
+            {
+                cbTypeCam.SelectedIndex = 0;
+            }catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
             btnDetail.Visible = false;
             clear_textBox();
 
@@ -52,9 +45,15 @@ namespace FaceRecognize
         private void btnStart_Click(object sender, EventArgs e)
         {
             Stop_cam();
-            cam = new VideoCaptureDevice(cameras[cbTypeCam.SelectedIndex].MonikerString);
-            cam.NewFrame += Cam_NewFrame;
-            cam.Start();
+            try
+            {
+                cam = new VideoCaptureDevice(cameras[cbTypeCam.SelectedIndex].MonikerString);
+                cam.NewFrame += Cam_NewFrame;
+                cam.Start();
+            }catch (Exception ex) {
+                MessageBox.Show(ex.Message); 
+            }
+            
         }
         private void Cam_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
@@ -86,7 +85,8 @@ namespace FaceRecognize
         }
         private async void receiveInfo()
         {
-            FirebaseResponse response = await client.GetAsync("Patients/" + "123455");
+            Auth.client_id = "123455";
+            FirebaseResponse response = await Auth.mclient.GetAsync("Patients/" + Auth.client_id);
             Patient obj = response.ResultAs<Patient>();
 
             if (obj != null)
@@ -153,17 +153,6 @@ namespace FaceRecognize
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            client = new FireSharp.FirebaseClient(config);
-            if(client == null)
-            {
-                MessageBox.Show("Connection to database failed");
-            }
-
-        }
-
-        private void Form1_Resize_1(object sender, EventArgs e)
-        {
-            //sizeControl(originalRectangel, picCam);
         }
 
         private void picCam_Click(object sender, EventArgs e)
@@ -192,14 +181,14 @@ namespace FaceRecognize
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            Form3 form = new Form3("123455");
+            Form3 form = new Form3();
             form.ShowDialog();
 
         }
-        
+
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            Auth.client_id = null;
         }
     }
 }
