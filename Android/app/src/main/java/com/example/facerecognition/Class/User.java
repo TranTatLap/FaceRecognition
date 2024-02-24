@@ -1,12 +1,17 @@
 package com.example.facerecognition.Class;
 
 public class User {
-    public String Name, Dob;
+    public String Fullname, Dob, Img;
 
     public User() {
     }
     public User(String name, String dob) {
-        this.Name = name;
+        this.Fullname = name;
         this.Dob = dob;
+    }
+    public User(String name, String dob, String img) {
+        this.Fullname = name;
+        this.Dob = dob;
+        this.Img = img;
     }
 }
