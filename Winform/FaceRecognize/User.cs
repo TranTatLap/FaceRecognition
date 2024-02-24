@@ -10,10 +10,14 @@ namespace FaceRecognize
     {
         public string Fullname { get; set; }
         public string Dob { get; set; }
-        public User(string fullname, string dob)
+        public string Email { get; set; }
+        public string Img { get; set; }
+        public User(string fullname, string dob, string email, string img)
         {
             Fullname = fullname;
             Dob = dob;
+            Email = email;
+            Img = img;
         }
     }
 }

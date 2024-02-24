@@ -15,6 +15,8 @@ using System.Security.Cryptography;
 using FireSharp.Response;
 using Newtonsoft.Json;
 using RestSharp.Authenticators;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace FaceRecognize
 {
@@ -59,8 +61,14 @@ namespace FaceRecognize
                         MessageBox.Show("Failed. Please contact the administrator");
                         return;
                     }
+                    MemoryStream ms = new MemoryStream();
+                    pbAvatar.Image.Save(ms, ImageFormat.Jpeg);
 
-                    var data = new User(tbFullname.Text.Trim(), dtpDoB.Text.Trim());
+                    byte[] a = ms.GetBuffer();
+
+                    String img_base64 = Convert.ToBase64String(a);
+
+                    var data = new User(tbFullname.Text.Trim(), dtpDoB.Text.Trim(),tbEmail.Text.Trim(),img_base64);
 
                     SetResponse response = await Auth.mclient.SetAsync("Users/" + uid, data);
                     Patient result = response.ResultAs<Patient>();
@@ -71,7 +79,7 @@ namespace FaceRecognize
                         return;
                     }
                     pbLoading.Visible = false;
-                    if (MessageBox.Show("Sign up successfully! \nBack to login?", "Successful!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Sign up successfully!\nBack to login?", "Successful!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         this.Close();
                     };
@@ -110,6 +118,19 @@ namespace FaceRecognize
         private void lbLogin_Click(object sender, EventArgs e)
         {
             this.Close();    
+        }
+
+        private void pbAvatar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Image";
+            ofd.Filter = "Image Files(*.jpg) | *.jpg";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                Image img = new Bitmap(ofd.FileName);
+                pbAvatar.Image = img;
+            }
         }
     }
 }

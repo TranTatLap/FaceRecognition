@@ -17,17 +17,6 @@ namespace FaceRecognize
 {
     public partial class Form_login : Form
     {
-        //public static FirebaseAuthConfig config = new FirebaseAuthConfig
-        //{
-        //    ApiKey = "AIzaSyCkiRh6pOgqJHc6_u0Z_5jRWEkbbKvmyXY",
-        //    AuthDomain = "facerecognition-6c037.firebaseapp.com",
-        //    Providers = new FirebaseAuthProvider[]
-        //    {
-        //        new EmailProvider()
-        //    }
-
-        //};
-        //FirebaseAuthClient client = new FirebaseAuthClient(config);
         public Form_login()
         {
             InitializeComponent();
@@ -38,7 +27,8 @@ namespace FaceRecognize
             pbLoading.Visible = true;
             try
             {
-                _ = await Auth.authClient.SignInWithEmailAndPasswordAsync(tbEmail.Text,tbPass.Text);
+                var auth = await Auth.authClient.SignInWithEmailAndPasswordAsync(tbEmail.Text,tbPass.Text);
+                Auth.uid = auth.User.Uid;
                 pbLoading.Visible = false;
                 tbPass.Clear();
                 tbEmail.Clear();
@@ -51,15 +41,14 @@ namespace FaceRecognize
                     return;
                 }
 
+                Form4 f = new Form4();
                 this.Hide();
-                Form4 form = new Form4();
-                form.ShowDialog();
-                form = null;
-                this.Show();
-            }
-            catch {
+                f.ShowDialog();
+                this.Close();
+            }  
+            catch (Exception ex){
                 pbLoading.Visible = false;
-                MessageBox.Show("Login failed!");
+                MessageBox.Show("Login failed!\nPlease check your email and password again.");
             }
         }
 

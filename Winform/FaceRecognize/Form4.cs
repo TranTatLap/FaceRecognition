@@ -48,7 +48,11 @@ namespace FaceRecognize
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form_user f = new Form_user();
+            f.ShowDialog();
+            f = null;
+            this.Show();
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
