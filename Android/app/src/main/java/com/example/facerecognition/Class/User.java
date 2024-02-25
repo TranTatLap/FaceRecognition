@@ -1,7 +1,7 @@
 package com.example.facerecognition.Class;
 
 public class User {
-    public String Fullname, Dob, Img;
+    public String Fullname, Dob,Email, Img;
 
     public User() {
     }
@@ -9,9 +9,10 @@ public class User {
         this.Fullname = name;
         this.Dob = dob;
     }
-    public User(String name, String dob, String img) {
+    public User(String name, String dob,String email, String img) {
         this.Fullname = name;
         this.Dob = dob;
+        this.Email =email;
         this.Img = img;
     }
 }

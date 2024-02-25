@@ -19,6 +19,7 @@ namespace FaceRecognize
 {
     public partial class Form_user : Form
     {
+        String img_base64 = "";
         public Form_user()
         {
             InitializeComponent();
@@ -36,17 +37,20 @@ namespace FaceRecognize
                     tbFullname.Text = obj.Fullname;
                     dtpDoB.Value = DateTime.ParseExact(obj.Dob, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     tbEmail.Text = obj.Email;
+                    img_base64 = obj.Img;
+                    if (img_base64 != null)
+                    {
+                        byte[] b = Convert.FromBase64String(obj.Img);
 
-                    byte[] b = Convert.FromBase64String(obj.Img);
+                        MemoryStream ms = new MemoryStream();
+                        ms.Write(b, 0, Convert.ToInt32(b.Length));
 
-                    MemoryStream ms = new MemoryStream();
-                    ms.Write(b, 0, Convert.ToInt32(b.Length));
+                        Bitmap bm = new Bitmap(ms, false);
 
-                    Bitmap bm = new Bitmap(ms, false);
+                        ms.Dispose();
 
-                    ms.Dispose();
-
-                    pbAvatar.Image = bm;
+                        pbAvatar.Image = bm;
+                    }
                 }
                 else
                 {
@@ -94,12 +98,17 @@ namespace FaceRecognize
                 MessageBox.Show("All field cannot be blank");
                 return;
             }
-            MemoryStream ms = new MemoryStream();
-            pbAvatar.Image.Save(ms, ImageFormat.Jpeg);
+            
+            try
+            {
+                MemoryStream ms = new MemoryStream();
+                pbAvatar.Image.Save(ms, ImageFormat.Jpeg);
 
-            byte[] a = ms.GetBuffer();
+                byte[] a = ms.GetBuffer();
 
-            String img_base64 = Convert.ToBase64String(a);
+                img_base64 = Convert.ToBase64String(a);
+            }
+            catch (Exception ex) { }
             var data = new User(tbFullname.Text, dtpDoB.Text.Trim(), tbEmail.Text, img_base64);
             SetResponse response = await Auth.mclient.SetAsync("Users/" + Auth.uid, data);
             User result = response.ResultAs<User>();

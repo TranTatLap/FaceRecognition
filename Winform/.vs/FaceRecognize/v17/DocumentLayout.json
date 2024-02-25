@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|d:\\tat lap\\github\\facerecognition\\winform\\facerecognize\\form_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,24 +35,12 @@
       "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|d:\\tat lap\\github\\facerecognition\\winform\\facerecognize\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -51,7 +51,7 @@
       "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\auth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|d:\\tat lap\\github\\facerecognition\\winform\\facerecognize\\form_user.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form_user.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form_user.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -59,7 +59,7 @@
       "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|d:\\tat lap\\github\\facerecognition\\winform\\facerecognize\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\facerecognize\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{15EEA9BB-91A5-4DD3-BB47-F15EEDF09099}|FaceRecognize\\FaceRecognize.csproj|solutionrelative:facerecognize\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -90,75 +90,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Form_signup.cs",
-              "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_signup.cs",
-              "RelativeDocumentMoniker": "FaceRecognize\\Form_signup.cs",
-              "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_signup.cs",
-              "RelativeToolTip": "FaceRecognize\\Form_signup.cs",
-              "ViewState": "AQIAAHAAAAAAAAAAAAAkwIQAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T05:04:37.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form4.cs [Design]",
-              "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form4.cs",
-              "RelativeDocumentMoniker": "FaceRecognize\\Form4.cs",
-              "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form4.cs [Design]",
-              "RelativeToolTip": "FaceRecognize\\Form4.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T05:04:37.598Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form1.cs",
-              "RelativeDocumentMoniker": "FaceRecognize\\Form1.cs",
-              "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form1.cs",
-              "RelativeToolTip": "FaceRecognize\\Form1.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAiwFYAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T05:04:37.599Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\User.cs",
-              "RelativeDocumentMoniker": "FaceRecognize\\User.cs",
-              "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\User.cs",
-              "RelativeToolTip": "FaceRecognize\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-24T04:00:54.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Form_user.cs",
               "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_user.cs",
               "RelativeDocumentMoniker": "FaceRecognize\\Form_user.cs",
               "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_user.cs",
               "RelativeToolTip": "FaceRecognize\\Form_user.cs",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAkwFYAAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-23T07:23:45.996Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Form4.cs",
               "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form4.cs",
               "RelativeDocumentMoniker": "FaceRecognize\\Form4.cs",
@@ -166,45 +115,99 @@
               "RelativeToolTip": "FaceRecognize\\Form4.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAmwDUAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T05:04:37.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-22T05:04:37.598Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Form_login.cs [Design]",
               "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_login.cs",
               "RelativeDocumentMoniker": "FaceRecognize\\Form_login.cs",
               "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_login.cs [Design]",
               "RelativeToolTip": "FaceRecognize\\Form_login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T05:04:37.596Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-02-22T05:04:37.596Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Form_login.cs",
               "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_login.cs",
               "RelativeDocumentMoniker": "FaceRecognize\\Form_login.cs",
               "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_login.cs",
               "RelativeToolTip": "FaceRecognize\\Form_login.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAADwvy4AAAAdAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAwwC4AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T05:04:37.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-22T05:04:37.596Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
+              "Title": "Form_user.cs [Design]",
+              "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_user.cs",
+              "RelativeDocumentMoniker": "FaceRecognize\\Form_user.cs",
+              "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_user.cs [Design]",
+              "RelativeToolTip": "FaceRecognize\\Form_user.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T07:22:50.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form_signup.cs [Design]",
               "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_signup.cs",
               "RelativeDocumentMoniker": "FaceRecognize\\Form_signup.cs",
               "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_signup.cs [Design]",
               "RelativeToolTip": "FaceRecognize\\Form_signup.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T05:04:37.594Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-02-22T05:04:37.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form_signup.cs",
+              "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_signup.cs",
+              "RelativeDocumentMoniker": "FaceRecognize\\Form_signup.cs",
+              "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_signup.cs",
+              "RelativeToolTip": "FaceRecognize\\Form_signup.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAgwEQAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T05:04:37.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\User.cs",
+              "RelativeDocumentMoniker": "FaceRecognize\\User.cs",
+              "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\User.cs",
+              "RelativeToolTip": "FaceRecognize\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-24T04:00:54.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form1.cs",
+              "RelativeDocumentMoniker": "FaceRecognize\\Form1.cs",
+              "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form1.cs",
+              "RelativeToolTip": "FaceRecognize\\Form1.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAiwFYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T05:04:37.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form4.cs [Design]",
+              "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form4.cs",
+              "RelativeDocumentMoniker": "FaceRecognize\\Form4.cs",
+              "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form4.cs [Design]",
+              "RelativeToolTip": "FaceRecognize\\Form4.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T05:04:37.598Z"
             },
             {
               "$type": "Document",
@@ -215,20 +218,7 @@
               "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form3.cs [Design]",
               "RelativeToolTip": "FaceRecognize\\Form3.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T05:04:37.247Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Form_user.cs [Design]",
-              "DocumentMoniker": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_user.cs",
-              "RelativeDocumentMoniker": "FaceRecognize\\Form_user.cs",
-              "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form_user.cs [Design]",
-              "RelativeToolTip": "FaceRecognize\\Form_user.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T07:22:50.808Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-02-22T05:04:37.247Z"
             },
             {
               "$type": "Document",
@@ -240,8 +230,7 @@
               "RelativeToolTip": "FaceRecognize\\Auth.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAqwBgAAABUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T07:58:35.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-22T07:58:35.398Z"
             },
             {
               "$type": "Document",
@@ -253,8 +242,7 @@
               "RelativeToolTip": "FaceRecognize\\Form3.cs",
               "ViewState": "AQIAABwAAAAAAAAAAAAAACAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T05:04:37.16Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-22T05:04:37.16Z"
             },
             {
               "$type": "Document",
@@ -266,8 +254,7 @@
               "RelativeToolTip": "FaceRecognize\\Form_user.Designer.cs",
               "ViewState": "AQIAAI0AAAAAAAAAAAAjwJoAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-24T04:50:36.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-24T04:50:36.186Z"
             },
             {
               "$type": "Document",
@@ -278,8 +265,7 @@
               "ToolTip": "D:\\Tat Lap\\Github\\FaceRecognition\\Winform\\FaceRecognize\\Form1.cs [Design]",
               "RelativeToolTip": "FaceRecognize\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T05:04:37.597Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-02-22T05:04:37.597Z"
             },
             {
               "$type": "Document",
